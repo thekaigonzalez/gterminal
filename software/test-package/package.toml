@@ -1,0 +1,6 @@
+[main]
+name = "test-package"
+version = "1.0.0"
+files = [
+    '/test.py'
+]
