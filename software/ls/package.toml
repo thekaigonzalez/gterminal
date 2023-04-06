@@ -1,0 +1,6 @@
+[main]
+name = "ls/list-directory"
+version = "1.0.0"
+files = [
+    '/ls.py'
+]
