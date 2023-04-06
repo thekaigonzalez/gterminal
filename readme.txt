@@ -1,6 +1,6 @@
 gterminal
 
-the combination of kterminal and krux
+the combination of kterminal and kux
 
 GTerminal
 
