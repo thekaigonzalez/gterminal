@@ -2,6 +2,7 @@ import os
 import time
 import toml
 import requests
+import random
 
 def get_arg(listf: list, num: int):
     if (len(listf) > num): return listf[num]
@@ -28,9 +29,11 @@ def pkg_install(prog: str):
     print("pkg: version: " + loader["main"]["version"])
 
     for file in loader["main"]["files"]:
+        print("file: " + file + " !")
         fileinstall = requests.get(url + file)
         with open("system/scripts" + file, "w") as f:
             f.write(fileinstall.text)
+        time.sleep(random.uniform(0.5, 0.01))
     print("---------")
     time.sleep(1)
     print("package installed :D ! enjoy.")
