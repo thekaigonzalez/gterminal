@@ -13,8 +13,12 @@ def pkg_install(prog: str):
         print("need package to install ?")
         return
     print("pkg: installing {} . . .".format(prog))
-    pkg_file = requests.get("https://raw.githubusercontent.com/thekaigonzalez/gterminal/master/software/" + prog + "/package.toml")
+    url = "https://raw.githubusercontent.com/thekaigonzalez/gterminal/master/software/" + prog
+    pkg_file = requests.get(url + "/package.toml")
     
+    if (pkg_file.status_code != 200):
+        print("error: package was not found in repo")
+        return -1
     loader = toml.loads(pkg_file.text)
 
     # https://raw.githubusercontent.com/thekaigonzalez/hello/master/hello.py
@@ -24,7 +28,12 @@ def pkg_install(prog: str):
     print("pkg: version: " + loader["main"]["version"])
 
     for file in loader["main"]["files"]:
-        print(file)
+        fileinstall = requests.get(url + file)
+        with open("system/scripts" + file, "w") as f:
+            f.write(fileinstall.text)
+    print("---------")
+    time.sleep(1)
+    print("package installed :D ! enjoy.")
 def onExecute(args: list):
     if (len(args) == 1):
         print(
