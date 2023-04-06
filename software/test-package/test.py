@@ -1,2 +1,2 @@
-def onExecute():
+def onExecute(arg: list):
     print("hello brother :)")
