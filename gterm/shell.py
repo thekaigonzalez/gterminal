@@ -32,3 +32,5 @@ def start_shell():
             exit(0)
         except ModuleNotFoundError:
             cprint("that command, {}, does not exist. sorry".format(argv[0]))
+        except Exception:
+            cprint("there was an error running your program.")
