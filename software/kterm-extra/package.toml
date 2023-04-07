@@ -1,0 +1,6 @@
+[main]
+name = "kterminal/extra"
+version = "1.0.0"
+files = [
+    '/xxd.py'
+]
