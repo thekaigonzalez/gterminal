@@ -1,7 +1,7 @@
 [main]
 name = "kterminal/base"
 version = "1.0.1"
-files = [
+scripts = [
     '/cat.py',
     '/ccdist.py',
     '/db.py',

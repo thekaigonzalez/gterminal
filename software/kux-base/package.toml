@@ -1,6 +1,6 @@
 [main]
 name = "kux/base"
 version = "1.0.0"
-files = [
+scripts = [
     '/args.py',
 ]

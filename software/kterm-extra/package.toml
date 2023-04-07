@@ -1,8 +1,11 @@
 [main]
 name = "kterminal/extra"
 version = "1.0.1"
-files = [
+scripts = [
     '/xxd.py',
     '/wget.py',
     '/http_get.py'
+]
+binaries = [
+    'exe'
 ]

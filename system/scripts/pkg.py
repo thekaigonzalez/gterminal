@@ -28,12 +28,15 @@ def pkg_install(prog: str):
     print("pkg: name: " + loader["main"]["name"])
     print("pkg: version: " + loader["main"]["version"])
 
-    for file in loader["main"]["files"]:
+    for file in loader["main"]["scripts"]:
         print("file: " + file + " !")
         fileinstall = requests.get(url + file)
         with open("system/scripts/" + os.path.basename(file), "w") as f:
             f.write(fileinstall.text)
         time.sleep(random.uniform(0.5, 0.01))
+    if (loader["main"].get("binaries") != None):
+        for file in loader["main"]["binaries"]:
+            print(file)
     print("---------")
     time.sleep(1)
     print("package installed :D ! enjoy.")
