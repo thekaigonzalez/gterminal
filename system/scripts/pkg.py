@@ -2,6 +2,8 @@ import os
 import time
 import toml
 import requests
+import shutil
+import stat
 import random
 
 def get_arg(listf: list, num: int):
@@ -35,12 +37,17 @@ def pkg_install(prog: str):
             f.write(fileinstall.text)
         time.sleep(random.uniform(0.5, 0.01))
     
-    for file in loader["main"]["binaries"]:
-        print("exe: " + file + " !")
-        fileinstall = requests.get(url + file)
-        with open("system/bin/" + os.path.basename(file), "w") as f:
-            f.write(fileinstall.text)
-        time.sleep(random.uniform(0.5, 0.01))
+    try:
+        for file in loader["main"]["binaries"]:
+            print("exe: " + file + " !")
+            fileinstall = requests.get(url + file)
+            with open("system/bin/" + os.path.basename(file), "wb") as f:
+                f.write(fileinstall.content)
+                st = os.stat("system/bin/" + os.path.basename(file))
+                os.chmod("system/bin/" + os.path.basename(file), st.st_mode | stat.S_IEXEC)
+            time.sleep(random.uniform(0.5, 0.01))
+    except KeyError:
+        print("! no binaries to install :)")
     print("---------")
     time.sleep(1)
     print("package installed :D ! enjoy.")
