@@ -86,3 +86,23 @@ example-of-fsu86/
     ├── games
     └── src
 ```
+
+### SW12 (Snarwin 12)
+
+The Snarwin filesystem is a filesystem that the **Snarwin** Lua shell uses.
+
+The Snarwin filesystem uses a `kernel` directory, aside a `usr` and `scripts` directory. But these are not in the same directory, instead they're all in a root directory, which was made for simplicity and as a contestant to the already existing FreeKSD's U86 Filesystem.
+
+```
+sw12
+├── kernel
+│   ├── etc
+│   │   └── files.lua
+│   └── io
+├── scripts
+│   └── prog.lua
+└── usr
+    ├── etc
+    ├── games
+    └── sbin
+```
