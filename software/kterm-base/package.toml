@@ -8,3 +8,6 @@ scripts = [
     '/echo.py',
     '/cmdnt.py'
 ]
+binaries = [
+    '/touch'
+]
