@@ -34,9 +34,13 @@ def pkg_install(prog: str):
         with open("system/scripts/" + os.path.basename(file), "w") as f:
             f.write(fileinstall.text)
         time.sleep(random.uniform(0.5, 0.01))
-    if (loader["main"].get("binaries") != None):
-        for file in loader["main"]["binaries"]:
-            print(file)
+    
+    for file in loader["main"]["binaries"]:
+        print("exe: " + file + " !")
+        fileinstall = requests.get(url + file)
+        with open("system/bin/" + os.path.basename(file), "w") as f:
+            f.write(fileinstall.text)
+        time.sleep(random.uniform(0.5, 0.01))
     print("---------")
     time.sleep(1)
     print("package installed :D ! enjoy.")
