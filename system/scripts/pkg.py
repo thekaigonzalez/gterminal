@@ -31,7 +31,7 @@ def pkg_install(prog: str):
     for file in loader["main"]["files"]:
         print("file: " + file + " !")
         fileinstall = requests.get(url + file)
-        with open("system/scripts" + file, "w") as f:
+        with open("system/scripts/" + os.path.basename(file), "w") as f:
             f.write(fileinstall.text)
         time.sleep(random.uniform(0.5, 0.01))
     print("---------")
