@@ -35,3 +35,8 @@ The (even more advanced) user shell
 * Easy man-bridge "help" command to use manual pages optionally
 * IS_SYSTEM_ENCRYPTED system using .protected files
 
+## FileSystem
+
+The filesystem format is in **Free System 64** format.
+
+Learn about the different formats in FORMATS.md
