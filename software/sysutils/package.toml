@@ -1,0 +1,7 @@
+[main]
+name = "sysutils"
+version = "1.0.0"
+files = [
+    '/exit.py',
+    '/mkdir.py',
+]
