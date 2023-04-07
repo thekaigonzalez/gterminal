@@ -5,4 +5,5 @@ files = [
     '/exit.py',
     '/mkdir.py',
     '/gfsc.py',
+    '/clear.py',
 ]
