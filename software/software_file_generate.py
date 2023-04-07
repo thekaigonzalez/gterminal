@@ -12,9 +12,9 @@ for i in os.listdir("."):
     if pathlib.Path(i).is_dir():
         packagetoml = open(i + "/package.toml")
         tomlpac = toml.load(packagetoml)
-        for i in tomlpac["main"]["files"]:
-            name = pathlib.Path(i).stem
-            final_dict[name] = tomlpac["main"]["name"]
+        for ic in tomlpac["main"]["files"]:
+            name = pathlib.Path(ic).stem
+            final_dict[name] = pathlib.Path(i).stem
         packagetoml.close()
 
 di = json.dumps(final_dict)
