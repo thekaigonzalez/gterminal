@@ -13,6 +13,8 @@ import readline
 import bashlex
 import gterm.colorshell as gshc
 import importlib
+import json
+import requests
 
 # ripped from gkux terminal
 cprint = lambda text: gshc.print_with_name(text, "gsh")
@@ -31,7 +33,13 @@ def start_shell():
         except EOFError: # ^D
             exit(0)
         except ModuleNotFoundError:
-            cprint("that command, {}, does not exist. sorry".format(argv[0]))
+            missing = requests.get("https://raw.githubusercontent.com/thekaigonzalez/gterminal/master/software/MISSING_SOFTWARE.json")
+            js = (missing.json())
+            if (js.get(argv[0]) != None):
+                cprint("that command can be found in the package '{}'.".format(js.get(argv[0])))
+                cprint("to install it: `pkg get " + js[argv[0]] + "'")
+            else:
+                cprint("that command, {}, does not exist. sorry".format(argv[0]))
         except Exception as e:
             cprint("there was an error running your program.")
             cprint("error: " + str(e))
