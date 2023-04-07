@@ -6,6 +6,3 @@ scripts = [
     '/wget.py',
     '/http_get.py'
 ]
-binaries = [
-    'exe'
-]
