@@ -5,5 +5,6 @@ files = [
     '/cat.py',
     '/ccdist.py',
     '/db.py',
-    '/echo.py'
+    '/echo.py',
+    '/cmdnt.py'
 ]
