@@ -1,1 +1,1 @@
-{"xxd": "kterminal/extra", "http_get": "kterminal/extra", "cat": "kterminal/base", "ccdist": "kterminal/base", "db": "kterminal/base", "echo": "kterminal/base", "cmdnt": "kterminal/base", "ls": "ls/list-directory", "test": "test-package"}
+{"xxd": "kterm-extra", "http_get": "kterm-extra", "cat": "kterm-base", "ccdist": "kterm-base", "db": "kterm-base", "echo": "kterm-base", "cmdnt": "kterm-base", "ls": "ls", "test": "test-package"}
