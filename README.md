@@ -31,7 +31,7 @@ The (even more advanced) user shell
 * No wires connected
 * Missing command locator (tells you the command and where to get it)
 * Big package support (multiple commands in one package)
-* + Python Cache Cleaner! can't go wrong with that. Right?
+* \+ A Python Cache Cleaner! can't go wrong with that. Right?
 * Easy man-bridge "help" command to use manual pages optionally
 * IS_SYSTEM_ENCRYPTED system using .protected files
 
