@@ -34,6 +34,7 @@ The (even more advanced) user shell
 * \+ A Python Cache Cleaner! can't go wrong with that. Right?
 * Easy man-bridge "help" command to use manual pages optionally
 * IS_SYSTEM_ENCRYPTED system using .protected files
+* NEW Binary support! You can run native programs in GTerminal now.
 
 ## FileSystem
 
