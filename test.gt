@@ -1,0 +1,11 @@
+# basic hello world program
+# runs the hello world command. as well as creates a string
+# that has hello world as it's value.
+
+print "Hello, world!"
+
+print "--------------"
+
+define helloworld "Hello, world!"
+
+print $helloworld
