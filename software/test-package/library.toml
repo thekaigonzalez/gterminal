@@ -1,0 +1,6 @@
+[main]
+name = "Test Library"
+version = "1.0.0"
+files = [
+    '/testfuncs.py'
+]
