@@ -6,7 +6,8 @@ scripts = [
     '/ccdist.py',
     '/db.py',
     '/echo.py',
-    '/cmdnt.py'
+    '/cmdnt.py',
+    '/strcmp.py'
 ]
 binaries = [
     '/touch'
