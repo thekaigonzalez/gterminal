@@ -17,13 +17,6 @@ from bashlex import split
 parse = (lambda text: 
          list(split(text)))
 
-"""
-
-def get_arg(listf: list, num: int, default = ""):
-    if (len(listf) > num): return listf[num]
-    else: return default
-    
-"""
 class Arguments:
     def __init__(self, argv: list[str]) -> None:
         self.args = argv
