@@ -7,4 +7,4 @@ def get_arg(listf: list, num: int):
     else: return "."
 
 def onExecute(arg: list):
-    print("\n".join(os.listdir(get_arg(arg, 1))))
+    print("    ".join(os.listdir(get_arg(arg, 1))))
