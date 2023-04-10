@@ -4,7 +4,7 @@ Kai's BootLoaders are different ways of loading into a shell / program automatic
 
 ## No Loader
 
-No loader is the simplest approach to a shell, have the user start a program which immediately throws them into a shell. No pre-computing, booting, or anything of the sort required. This method is the fastest and most effective for quick systems that don't need much setup/requirement. The main shell engines which utilize this method are Kux (Somewhat, see below), KTerminal, and GTerminal.
+No loader is the simplest approach to a shell, have the user start a program which immediately throws them into a shell. No pre-computing, booting, or anything of the sort required. This method is the fastest and most effective for quick systems that don't need much setup/requirement. The main shell engines which utilize this method are Kux (Somewhat, see below) and KTerminal.
 
 A no-loader would look something like this:
 
@@ -56,6 +56,8 @@ choose your system:
 The FKSAS is an account-based, send-and-recieve system that passes around codes to be able to log a user into the shell. Unlike all the others, this system is unique because it allows the user to run a system securely, and has very minimal room for error.
 
 The account system is one of the main reasons that FreeKSD has succeeded in the Operation System industry, due to the fact it's lenient, parallel, and lightweight. It works off of multiple files and different codes for each of them. FreeKSD is one of the most chosen Operation Shells when it comes to stability.
+
+As of recent times, GTerminal has finally taken upon this SAS and they now have implemented accounts into the latest versions of GTerminal.
 
 ```
 $ ./prog
