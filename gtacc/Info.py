@@ -43,8 +43,6 @@ def start_pass_prompt():
     with open("./system/account.json", "w") as f:
         f.write(asbase64)
 
-    print("account created. restart.")
-    
     return response_ok
 
 def login_prompt() -> int:
