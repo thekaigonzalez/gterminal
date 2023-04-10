@@ -14,9 +14,13 @@ import bashlex
 import gterm.colorshell as gshc
 import importlib
 import json
+import datetime
 import gterm.gterm_filesystem as gfs
 import requests
+import colorama
 import subprocess
+
+from gtacc.Info import get_info
 
 # ripped from gkux terminal
 cprint = lambda text: gshc.print_with_name(text, "gsh")
@@ -28,7 +32,13 @@ def start_shell():
 
     while True:
         try:
-            raw_command = input(":-$ ").strip()
+            raw_command = input("[ " + colorama.Fore.GREEN +
+                                colorama.Style.BRIGHT +
+                                "{}".format(get_info()["name"]) +
+                                colorama.Style.RESET_ALL + " | " + colorama.Fore.GREEN +
+                                colorama.Style.BRIGHT +
+                                "{}".format(datetime.date.today().ctime()) +
+                                colorama.Style.RESET_ALL + " ] - $ ").strip()
             if (raw_command.startswith("#")): continue
             if (len(raw_command) == 0): continue
             argv = list(bashlex.split(raw_command))
@@ -36,7 +46,7 @@ def start_shell():
                 c = importlib.import_module("system.scripts." + argv[0])
                 c.onExecute(argv)
             elif gfs.exists("/bin/" + argv[0]):
-                subprocess.run([gfs.getsysroot("/bin/" + argv[0])] + argv[1:],
+                subprocess.run([gfs.getsysroot("/bin/" + argv.pop(0))] + argv,
                                shell=True)
             else:
                 missing = requests.get(
